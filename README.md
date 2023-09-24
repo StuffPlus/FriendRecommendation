@@ -35,8 +35,10 @@ connections to other members (the friends each member has). The input to your pr
 representation and the output described in the requirements section should be displayed on the PyCharm console.
 Your program should work via the console and does not need to create a graphical user interface – Graphical User
 Interface (GUI). There are no marks for creating a Windows-based application.
-Page 4 | 17
+
+
 System Features and Requirements
+
 The system must provide the following features and comply with the System Specifications outlined above. All the
 features below must be completed individually. All network member input and output should be via the PyCharm
 console and not via a GUI. The input must be validated for correctness, must prompt an error message if incorrect
@@ -52,6 +54,7 @@ by a member name OR member ID. The member/friend pairs should be listed on separ
 • There is no limit to the number of members or relations between them in the social network. The only
 restriction is that number of member must match that determined by the integer on the first line of the file.
 For simplicity, start with smaller networks and gradually test your program with larger ones.
+
 Sample social network and the lines that should show in the nw_data1.txt file:
 7
 Adam Bob
@@ -95,8 +98,9 @@ Bob
 Zia
 Mia
 Liz
-Page 5 | 17
+
 ii. Simulate the social network structure:
+
 • Get social network data:
 once the file is opened successfully, read the file (following the format described in nw_data1.txt)
 and dynamically create an appropriate data structure named social_NW to hold the social network so
@@ -157,7 +161,7 @@ or
 5 -> [0,0,0,0,0,1,0]
 6 -> [0,0,0,0,0,0,0]
 or
-Page 6 | 17
+
 ii. Recommend a friend:
 • Given a member name (m_name) or ID (m_ID), determine the largest common friends count for that
 m_name/m_ID from the common_friends structure produced in F2.i and return the corresponding
