@@ -44,8 +44,10 @@ features below must be completed individually. All network member input and outp
 console and not via a GUI. The input must be validated for correctness, must prompt an error message if incorrect
 values are entered, and continue to ask for valid values until one is entered or "n" is entered to stop.
 Task 0 – Planning and Setup (to be shown to your lab tutor as soon as possible)
+
 i. Create a plan of how you will complete this project. The plan should show each of the features and sub-
 features listed below and when you expect to complete them.
+
 ii. Create a text file called nw_data1.txt containing a representation of a social network in the following format
 (which will be used as input to your program to test your code and should be read on start-up):
 • The first line of the file is an integer representing the number of members in the social network, then
@@ -55,7 +57,7 @@ by a member name OR member ID. The member/friend pairs should be listed on separ
 restriction is that number of member must match that determined by the integer on the first line of the file.
 For simplicity, start with smaller networks and gradually test your program with larger ones.
 
-Sample social network and the lines that should show in the nw_data1.txt file:
+Sample social network and the lines that should show in the nw_data1.txt file: 
 7
 Adam Bob
 Bob Amir
@@ -63,7 +65,9 @@ Bob Mia
 Chris Zia
 Mia Amir
 Liz
+
 The above is a representation of a social network that has 6 members with the following relations:
+
 Adam is friends with Bob
 Amir is friends with Bob, Mia
 Bob is friends with Adam, Amir, Mia
@@ -71,15 +75,20 @@ Chris is friends with Zia
 Mia is friends with Amir, Bob
 Zia is friends with Chris
 Liz is friends with none
-Note: the network graph is for illustration only and you are not expected to draw it in your code.
-iii. Consider/design the classes, methods, and data structures needed before starting to code. This
-coursework requires you to implement your program using classes so, start by considering suitable classes
-first. The think about the methods you will include in each based on the feature requirements below. Note
-that any program using classes can be written without classes, but there will be no credit for such solutions!
-iv. Create additional test input files nw_data2, nw_data3, etc. containing larger social networks which you
-can later use to test and validate your program.
-F1 – Feature 1: Social Network Data
-i. Open social network file:
+Note: the network graph is for illustration only and you are not expected to draw it in your code. 
+
+iii. Consider/design the classes, methods, and data structures needed before starting to code. This 
+coursework requires you to implement your program using classes so, start by considering suitable classes 
+first. The think about the methods you will include in each based on the feature requirements below. Note 
+that any program using classes can be written without classes, but there will be no credit for such solutions! 
+
+iv. Create additional test input files nw_data2, nw_data3, etc. containing larger social networks which you 
+can later use to test and validate your program. 
+
+F1 – Feature 1: Social Network Data 
+
+i. Open social network file: 
+
 this sub-feature should allow the user to enter a file name and prompt an error message if the file cannot be
 opened. The process should continue to as ask for a valid file name until the file can be opened or the user
 types "n".
@@ -116,14 +125,19 @@ Chris -> Zia
 Mia -> Amir, Bob
 Zia -> Chris
 Liz ->
+
+
 F2 – Feature 2: Friend Recommendation
+
 The aim is to recommend the most likely new friend(s) to an existing network member based on the intersection
 of their common friends. The algorithm for this recommendation is as follows: for each member of the social
 network, count the number of friends they have in common with each of the other members. Then for each member
 in the network, the friend that is recommended for them is the member of that network whom they are not currently
 friends with but have the most friends in common. It makes sense, intuitively, why they may like to be connected as
 friends. In this simulation, members with no friends will NOT be recommended any new friends.
+
 i. Get a common friend count for each member of the social network:
+
 • This should return the number of friends that any pair of members in the social network have in common.
 • the count must be produced for every member in the network and maintained accordingly in an
 appropriate data structure (the data structure must represent all possible member pairs in the social
@@ -135,6 +149,7 @@ e.g. given the sample network in nw_data1.txt the number of common friends betwe
 and Amir is 1, between Bob and Adam is 0, and between Bob and Zia is 0.
 2. do the same for all the pairs of members in the network and include the resulting numbers in the
 common_friends data structure.
+
 • Example pretty print of common_freinds given the sample network in nw_data1.txt is:
 Adam ->[1,1,0,0,1,0,0]
 Amir ->[1,2,1,0,1,0,0]
@@ -172,17 +187,22 @@ friend, and it also doesn’t make sense to recommend the m_name/m_ID as their o
 • Example output given the sample output from 1:
 Recommended friend for Mia is Adam or Recommended friend for 4 is 0
 Recommended friend for Bob is none or Recommended friend for 2 is none
+
 F3 – Feature 3: Social network analysis and statistics
+
 i. Display how many friends a given member has:
 • This sub-feature should allow the user to enter a member name or ID and display the number of friends
 that the member has. It should validate that the input exists and prompt an error message otherwise.
+
 ii. Show the members with the least number of friends and those who have no friends at all:
 • Display all the members with the least number of friends and those with no friends at all. Pretty-print
 your output on the PyCharm console.
+
 iii. Show the relationships for a given member:
 • This sub-feature should allow the user to enter a member name or ID and show all the friends that the
 member is connected within the social network. It should validate that the input exists and prompt an
 error message otherwise. The output should display the relationships for that member.
+
 iv. Find indirect relationships (connections) between members:
 • For every member in the social network find the friends of all the direct friends of that member but do
 not include the member themself. Friend-of-a-friend relationships are indirect connections between
@@ -190,6 +210,7 @@ people and represent indirect relations between members. This sub-feature should
 data structure with those connections and name it as indirect_friends The data structure only needs to
 represent the first level of indirect relations (i.e., only contain the friends of direct friends of each
 member). Pretty-print the elements of the data structure on the PyCharm console.
+
 v. Validate the input:
 • Update F1.ii to validate the social network data read from the file after it has been opened successfully.
 This sub-feature should check the consistency of friendships (connections) in the network. The network
